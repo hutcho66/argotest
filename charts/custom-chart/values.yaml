@@ -17,3 +17,4 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
+env_vars: {}

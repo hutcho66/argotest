@@ -16,8 +16,10 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
-        image:
-          tag: 1.22.0
+        image.tag: 1.22.0
+        env_vars:
+          - name: MY_ENV_VAR
+            value: my_env_value
   syncPolicy:
     automated:
       prune: true
