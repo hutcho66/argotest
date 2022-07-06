@@ -16,7 +16,6 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
-        fullnameOverride: nginx
         image.tag: 1.22.0
         env_vars:
           - name: MY_ENV_VAR
