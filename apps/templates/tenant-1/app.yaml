@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus-tenant-1
+  name: nginx-app
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,13 +11,9 @@ spec:
     namespace: tenant-1
   project: default
   source:
-    chart: prometheus
-    helm:
-      values: |
-        pushgateway:
-          enabled: false
-    repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 15.6.0
+    path: charts/custom-chart
+    repoURL: https://github.com/hutcho66/argotest.git
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
